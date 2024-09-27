@@ -1,6 +1,6 @@
 # Svelte Inview
 
-A _simple_ and _easy_ to `use` intersection observer library for Svelte 5.
+A _simple_, _small_ and _easy_ to `use` intersection observer library for Svelte 5.
 
 > ⚠ WIP, expect bugs.
 
@@ -9,11 +9,11 @@ A _simple_ and _easy_ to `use` intersection observer library for Svelte 5.
 This library just relies on Svelte 5.
 
 ```sh
-$ npm install --save svelte-5-inview
+$ npm install --save svelte-inview-next
 # or
-$ bun add svelte-5-inview
+$ bun add svelte-inview-next
 # or
-$ pnpm add svelte-5-inview
+$ pnpm add svelte-inview-next
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ $ pnpm add svelte-5-inview
 
 ```svelte
 <script lang="ts">
-	import { inView, isInView } from 'svelte-5-inview';
+	import { inView, isInView } from 'svelte-inview-next';
 </script>
 
 <div use:inView={{ id: 'testElement' }}>test</div>
@@ -36,7 +36,7 @@ Lazy loading images before they enter the viewport.
 
 ```svelte
 <script lang="ts">
-	import { inView, isInView } from 'svelte-5-inview';
+	import { inView, isInView } from 'svelte-inview-next';
 </script>
 
 <div use:inView={{ id: 'image', rootMargin: '100px', once: true }}>
@@ -54,7 +54,7 @@ Play/pause a video when it's in/out the viewport.
 
 ```svelte
 <script lang="ts">
-	import { inView, isInView } from 'svelte-5-inview';
+	import { inView, isInView } from 'svelte-inview-next';
 
 	let videoElement: HTMLVideoElement;
 	$effect(() => {
