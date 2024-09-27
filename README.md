@@ -1,4 +1,4 @@
-# Svelte Inview
+# Svelte Inview Next
 
 A _simple_, _small_ and _easy_ to `use` intersection observer library for Svelte 5.
 
@@ -14,6 +14,8 @@ $ npm install --save svelte-inview-next
 $ bun add svelte-inview-next
 # or
 $ pnpm add svelte-inview-next
+# or
+$ yarn add svelte-inview-next
 ```
 
 ## Usage
