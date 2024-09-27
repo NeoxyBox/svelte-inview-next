@@ -15,6 +15,7 @@
 </script>
 
 <div style="height: 200vh;">
+	<!-- svelte-ignore a11y_media_has_caption -->
 	<video width="500" controls use:inView={{ id: 'video' }} bind:this={videoElement}>
 		<source
 			src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"

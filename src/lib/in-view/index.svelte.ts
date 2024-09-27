@@ -7,28 +7,11 @@ type InViewStates = {
 };
 
 type InViewOptions = {
-    /** Unique identifier of inview data. */
     id: string;
-    /** It changes intersection area and observing behaviour.
-     * 
-     * Must be ancestor of `node`. */
     root?: HTMLElement;
-    /** Expands or narrows intersection area.
-     * 
-     * It can be any valid CSS margin expression like
-     * `0px 40px -40px 0px` or `20%`. */
     rootMargin?: string,
-    /** It can be a single number or an array of numbers.
-     * 
-     * In example, if the value is `0.5`, the observer waits
-     * for visibility of the element passes `50%` to trigger.
-     * When `treshold` is an array of numbers, the observer
-     * will trigger on all treshold points. Value can be
-     * between `0.0`-`1.0`. */
     threshold?: number | number[];
-    /** It defines whether or not trigger for just once. */
     once?: boolean;
-    /** Runs after state set. */
     observerAction?: (entry: IntersectionObserverEntry) => {}
 };
 
@@ -39,17 +22,17 @@ export function inView(node: HTMLElement, { id, root, rootMargin, threshold, onc
 
     if (IntersectionObserver && node) {
         const observer = new IntersectionObserver((entries, _observer) => {
-            entries.forEach((entry) => {
-                inViewStates[contextName] = entry;
+            const entry = entries[0];
+            inViewStates[contextName] = entry;
 
-                if (observerAction) {
-                    observerAction(entry);
-                }
+            if (observerAction) {
+                observerAction(entry);
+            }
 
-                if (once && entry.isIntersecting) {
-                    _observer.unobserve(node);
-                }
-            })
+            if (once && entry.isIntersecting) {
+                _observer.unobserve(node);
+            }
+
         }, { root, rootMargin, threshold });
 
         observer.observe(node);
