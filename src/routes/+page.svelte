@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { inView, currentInViewIds, isInView } from '$lib/index.js';
+	import { inView, currentInViewIds, isInView, inViewData } from '$lib/index.js';
 
-	$inspect('Test 1 ' + isInView('test1'));
+	$inspect('Test 1', isInView('test1'), inViewData('test1'));
 </script>
 
 <div class="sticky-top">
@@ -49,23 +49,23 @@
 	}
 
 	.element {
-		&:nth-of-type(1) {
+		&:nth-child(1) {
 			background-color: crimson;
 		}
 
-		&:nth-of-type(2) {
+		&:nth-child(2) {
 			background-color: rgb(20, 140, 220);
 		}
 
-		&:nth-of-type(3) {
+		&:nth-child(3) {
 			background-color: rgb(20, 220, 70);
 		}
 
-		&:nth-of-type(4) {
+		&:nth-child(4) {
 			background-color: rgb(200, 220, 20);
 		}
 
-		&:nth-of-type(5) {
+		&:nth-child(5) {
 			background-color: rgb(203, 20, 220);
 		}
 	}
