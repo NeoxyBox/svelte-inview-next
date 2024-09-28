@@ -2,11 +2,9 @@
 
 A _simple_, _small_ and _easy_ to `use` intersection observer library for Svelte 5.
 
-> ⚠ WIP, expect bugs.
+> ⚠ WIP, and the maintainer is not a web veteran. Expect bugs.
 
 ## Installation
-
-This library just relies on Svelte 5.
 
 ```sh
 $ npm install --save svelte-inview-next
@@ -34,7 +32,7 @@ $ yarn add svelte-inview-next
 
 ### Lazy Loading Images
 
-Lazy loading images before they enter the viewport.
+Lazy loading of images before they enter the viewport.
 
 ```svelte
 <script lang="ts">
@@ -52,7 +50,7 @@ Lazy loading images before they enter the viewport.
 
 ### Video Control
 
-Play/pause a video when it's in/out the viewport.
+Play/pause a video when it's in/out of the viewport.
 
 ```svelte
 <script lang="ts">
