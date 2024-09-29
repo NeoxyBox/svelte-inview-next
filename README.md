@@ -22,7 +22,7 @@ $ yarn add svelte-inview-next
 
 ```svelte
 <script lang="ts">
-	import { inView, isInView } from 'svelte-inview-next';
+    import { inView, isInView } from 'svelte-inview-next';
 </script>
 
 <div use:inView={{ id: 'testElement' }}>test</div>
@@ -36,15 +36,15 @@ Lazy loading of images before they enter the viewport.
 
 ```svelte
 <script lang="ts">
-	import { inView, isInView } from 'svelte-inview-next';
+    import { inView, isInView } from 'svelte-inview-next';
 </script>
 
 <div use:inView={{ id: 'image', rootMargin: '100px', once: true }}>
-	{#if isInView('image')}
-		<img src="path/to/image.jpg" />
-	{:else}
-		<div class="placeholder" />
-	{/if}
+    {#if isInView('image')}
+        <img src="path/to/image.jpg" />
+    {:else}
+        <div class="placeholder" />
+    {/if}
 </div>
 ```
 
@@ -54,23 +54,21 @@ Play/pause a video when it's in/out of the viewport.
 
 ```svelte
 <script lang="ts">
-	import { inView, isInView } from 'svelte-inview-next';
+    import { inView, isInView } from 'svelte-inview-next';
 
-	let videoElement: HTMLVideoElement;
-	$effect(() => {
-		if (isInView('video')) {
-			videoElement?.play();
-		} else {
-			videoElement?.pause();
-		}
-	});
+    let videoElement: HTMLVideoElement;
+    $effect(() => {
+        if (isInView('video')) {
+            videoElement?.play();
+        } else {
+            videoElement?.pause();
+        }
+    });
 </script>
 
-<div>
-	<video width="500" controls use:inView={{ id: 'video' }} bind:this={videoElement}>
-		<source src="path/to/video.mp4" type="video/mp4" />
-	</video>
-</div>
+<video width="500" controls use:inView={{ id: 'video' }} bind:this={videoElement}>
+    <source src="path/to/video.mp4" type="video/mp4" />
+</video>
 ```
 
 # License
